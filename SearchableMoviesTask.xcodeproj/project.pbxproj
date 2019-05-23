@@ -205,11 +205,11 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		1E3B9AC22296B7EE0036491E /* NetworkLayer */ = {
+		1E3B9AC22296B7EE0036491E /* RemoteService */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = NetworkLayer;
+			path = RemoteService;
 			sourceTree = "<group>";
 		};
 		1E3B9AC72296BAB50036491E /* Movies */ = {
@@ -275,7 +275,7 @@
 			children = (
 				1E3B9AE92296D59D0036491E /* DTOS */,
 				1E3B9AE42296D46F0036491E /* LocalService */,
-				1E3B9AC22296B7EE0036491E /* NetworkLayer */,
+				1E3B9AC22296B7EE0036491E /* RemoteService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
