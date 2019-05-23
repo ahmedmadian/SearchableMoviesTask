@@ -140,7 +140,6 @@
 				1E3B9ABE2296B7A40036491E /* Resources */,
 				1E3B9ABF2296B7AF0036491E /* Configuration */,
 				1E3B9AE32296D4650036491E /* Services */,
-				1E3B9A932296B7420036491E /* Main.storyboard */,
 			);
 			path = SearchableMoviesTask;
 			sourceTree = "<group>";
@@ -174,6 +173,7 @@
 		1E3B9ABE2296B7A40036491E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E3B9A932296B7420036491E /* Main.storyboard */,
 				1E3B9A962296B7430036491E /* Assets.xcassets */,
 				1E3B9A982296B7430036491E /* LaunchScreen.storyboard */,
 			);
