@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
+    
+    
 
     //MARK: Properies.
     static let CellId = "MovieCell"
@@ -23,7 +25,10 @@ class MovieTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-  
+    
+    func configure(viewModel: MoviesViewModel) {
+        titleLabel.text = viewModel.title
+        dateLabel.text = "Date: \(viewModel.year)"
+    }
 
 }

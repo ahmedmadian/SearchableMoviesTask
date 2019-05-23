@@ -27,6 +27,10 @@
 		1E3B9AE22296C7DD0036491E /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AE12296C7DD0036491E /* MoviesRouter.swift */; };
 		1E3B9AE62296D4900036491E /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AE52296D4900036491E /* MoviesService.swift */; };
 		1E3B9AE82296D4ED0036491E /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B9AE72296D4ED0036491E /* movies.json */; };
+		1E3B9AEB2296D5C10036491E /* MoviesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AEA2296D5C10036491E /* MoviesDTO.swift */; };
+		1E3B9AF02296D9D80036491E /* MoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */; };
+		1E3B9AF22296E0A00036491E /* MoviesCellViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */; };
+		1E3B9AF52296E0F10036491E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		1E3B9AE12296C7DD0036491E /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 		1E3B9AE52296D4900036491E /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		1E3B9AE72296D4ED0036491E /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
+		1E3B9AEA2296D5C10036491E /* MoviesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDTO.swift; sourceTree = "<group>"; };
+		1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWorker.swift; sourceTree = "<group>"; };
+		1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCellViewProtocol.swift; sourceTree = "<group>"; };
+		1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				1E3B9AE72296D4ED0036491E /* movies.json */,
+				1E3B9AED2296D9A80036491E /* Workers */,
 				1E3B9AC12296B7E00036491E /* Modules */,
 				1E3B9AC02296B7D20036491E /* Model */,
+				1E3B9AF32296E0D90036491E /* ViewModel */,
 				1E3B9ABD2296B7930036491E /* Core */,
 				1E3B9ABE2296B7A40036491E /* Resources */,
 				1E3B9ABF2296B7AF0036491E /* Configuration */,
@@ -255,6 +265,7 @@
 				1E3B9AD92296C2A40036491E /* MoviesRouterProtocol.swift */,
 				1E3B9ADB2296C3300036491E /* MoviesInteractorInputProtocol.swift */,
 				1E3B9ADD2296C35B0036491E /* MoviesInteractorOutputProtocol.swift */,
+				1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -262,6 +273,7 @@
 		1E3B9AE32296D4650036491E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1E3B9AE92296D59D0036491E /* DTOS */,
 				1E3B9AE42296D46F0036491E /* LocalService */,
 				1E3B9AC22296B7EE0036491E /* NetworkLayer */,
 			);
@@ -274,6 +286,30 @@
 				1E3B9AE52296D4900036491E /* MoviesService.swift */,
 			);
 			path = LocalService;
+			sourceTree = "<group>";
+		};
+		1E3B9AE92296D59D0036491E /* DTOS */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B9AEA2296D5C10036491E /* MoviesDTO.swift */,
+			);
+			path = DTOS;
+			sourceTree = "<group>";
+		};
+		1E3B9AED2296D9A80036491E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		1E3B9AF32296E0D90036491E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,13 +448,17 @@
 				1E3B9AD22296BE5D0036491E /* MovieTableViewCell.swift in Sources */,
 				1E3B9AC62296B8B50036491E /* Genre.swift in Sources */,
 				1E3B9AC42296B8930036491E /* Movie.swift in Sources */,
+				1E3B9AF22296E0A00036491E /* MoviesCellViewProtocol.swift in Sources */,
 				1E3B9AE62296D4900036491E /* MoviesService.swift in Sources */,
 				1E3B9A902296B7420036491E /* AppDelegate.swift in Sources */,
 				1E3B9AD82296C2700036491E /* MoviesPresenterProtocol.swift in Sources */,
 				1E3B9ADC2296C3300036491E /* MoviesInteractorInputProtocol.swift in Sources */,
 				1E3B9AE02296C76E0036491E /* MoviesInteractor.swift in Sources */,
 				1E3B9AE22296C7DD0036491E /* MoviesRouter.swift in Sources */,
+				1E3B9AF02296D9D80036491E /* MoviesWorker.swift in Sources */,
 				1E3B9ADA2296C2A40036491E /* MoviesRouterProtocol.swift in Sources */,
+				1E3B9AF52296E0F10036491E /* MoviesViewModel.swift in Sources */,
+				1E3B9AEB2296D5C10036491E /* MoviesDTO.swift in Sources */,
 				1E3B9AD02296BC6C0036491E /* MoviesViewController.swift in Sources */,
 				1E3B9ADE2296C35B0036491E /* MoviesInteractorOutputProtocol.swift in Sources */,
 				1E3B9AD42296C1730036491E /* MoviesPresenter.swift in Sources */,

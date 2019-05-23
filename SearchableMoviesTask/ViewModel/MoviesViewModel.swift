@@ -1,5 +1,5 @@
 //
-//  MoviesInteractorOutputProtocol.swift
+//  MoviesViewModel.swift
 //  SearchableMoviesTask
 //
 //  Created by Madian on 5/23/19.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol MoviesInteractorOutputProtocol {
-    func moviesFetechedSuccessfully(movies: [Movie])
+struct MoviesViewModel {
+    var title: String
+    var year: Int
 }

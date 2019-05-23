@@ -12,4 +12,5 @@ protocol MoviesViewProtocol: class {
     
     //View Owns and send user action to presenter
     var presenter: MoviesPresenterProtocol? {get set}
+    func reloadData()
 }

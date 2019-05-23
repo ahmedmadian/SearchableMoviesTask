@@ -12,8 +12,8 @@ protocol MoviesPresenterProtocol: class {
     
     // presenter should update view
     var view: MoviesViewProtocol? {get set}
-    
-    
-    
+    var numberOfRows: Int {get}
+    func viewDidLoad()
+    func configure(cell: MoviesCellViewProtocol, indexPath: IndexPath)
     
 }

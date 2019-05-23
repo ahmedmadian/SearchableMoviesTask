@@ -1,5 +1,5 @@
 //
-//  MoviesInteractorOutputProtocol.swift
+//  MoviesCellViewProtocol.swift
 //  SearchableMoviesTask
 //
 //  Created by Madian on 5/23/19.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
-protocol MoviesInteractorOutputProtocol {
-    func moviesFetechedSuccessfully(movies: [Movie])
+protocol MoviesCellViewProtocol {
+    func configure(viewModel: MoviesViewModel)
 }

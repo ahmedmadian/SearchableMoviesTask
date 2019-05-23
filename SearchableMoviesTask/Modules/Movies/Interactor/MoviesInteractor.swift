@@ -9,7 +9,15 @@
 import Foundation
 
 class MoviesInteractor: MoviesInteractorInputProtocol{
-    weak var presenter: MoviesPresenterProtocol?
     
     
+    var presenter: MoviesInteractorOutputProtocol?
+    
+    private let moviesWorker = MoviesWorker()
+    
+    func getMovies() {
+        print("Interactor should get the data")
+        guard let movies = moviesWorker.getMovies() else{ return}
+        presenter?.moviesFetechedSuccessfully(movies: movies)
+    }
 }

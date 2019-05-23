@@ -16,15 +16,20 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     
 
     // MARK: Outlets.
-    
     @IBOutlet weak var moviesTableView: UITableView!
     
     //MARK: Controller Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupMoviesTableView()
+        presenter?.viewDidLoad()
     }
+    
+    //MARK: Methods
+    func reloadData() {
+        moviesTableView.reloadData()
+    }
+    
 }
 
 
@@ -38,11 +43,13 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        print(presenter!.numberOfRows)
+        return presenter!.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.CellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.CellId, for: indexPath) as! MovieTableViewCell 
+        presenter?.configure(cell: cell, indexPath: indexPath)
         return cell
     }
 }

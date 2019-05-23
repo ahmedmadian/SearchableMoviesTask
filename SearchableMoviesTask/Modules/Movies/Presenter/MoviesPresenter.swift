@@ -9,11 +9,15 @@
 import Foundation
 
 class MoviesPresenter: MoviesPresenterProtocol, MoviesInteractorOutputProtocol {
+  
     
+ 
     //MARK: Properties.
-    
     weak var view: MoviesViewProtocol?
-    
+    var movies = [Movie]()
+    var numberOfRows: Int {
+        return movies.count
+    }
     // presenter owns interactor and ask for updates
     private let interactor: MoviesInteractorInputProtocol
     
@@ -24,6 +28,25 @@ class MoviesPresenter: MoviesPresenterProtocol, MoviesInteractorOutputProtocol {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    //MARK: Methods.
+    func viewDidLoad() {
+        print("Presenter Should get the data")
+        interactor.getMovies()
+    }
+    
+    func moviesFetechedSuccessfully(movies: [Movie]) {
+        print("Data comed")
+        self.movies.append(contentsOf: movies)
+        view?.reloadData()
+    }
+    
+    func configure(cell: MoviesCellViewProtocol, indexPath: IndexPath) {
+        let movie = self.movies[indexPath.row]
+        let viewModel = MoviesViewModel(title: movie.title, year: movie.year)
+        cell.configure(viewModel: viewModel)
+        
     }
     
     

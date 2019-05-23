@@ -10,6 +10,8 @@ import Foundation
 
 protocol MoviesInteractorInputProtocol {
     
-    //Interactor notifies presenter
-    var presenter: MoviesPresenterProtocol? {get set}
+    //Interactor notifies any one intersted for changes
+    var presenter: MoviesInteractorOutputProtocol? {get set}
+    
+    func getMovies()
 }
