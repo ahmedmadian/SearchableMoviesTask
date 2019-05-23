@@ -8,7 +8,12 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
+class MoviesViewController: UIViewController, MoviesViewProtocol {
+    
+    //MARK: Properties
+    static let ViewControllerId = "MoviesViewController"
+    var presenter: MoviesPresenterProtocol?
+    
 
     // MARK: Outlets.
     

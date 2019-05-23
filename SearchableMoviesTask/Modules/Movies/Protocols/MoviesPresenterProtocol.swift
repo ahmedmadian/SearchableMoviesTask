@@ -13,4 +13,7 @@ protocol MoviesPresenterProtocol: class {
     // presenter should update view
     var view: MoviesViewProtocol? {get set}
     
+    
+    
+    
 }

@@ -11,5 +11,5 @@ import Foundation
 protocol MoviesInteractorInputProtocol {
     
     //Interactor notifies presenter
-    var presenter: MoviesPresenterProtocol {get set}
+    var presenter: MoviesPresenterProtocol? {get set}
 }
