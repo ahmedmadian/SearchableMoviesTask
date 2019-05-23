@@ -17,10 +17,12 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
 
     // MARK: Outlets.
     @IBOutlet weak var moviesTableView: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
     
     //MARK: Controller Events
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.searchController = searchController
         setupMoviesTableView()
         presenter?.viewDidLoad()
     }
@@ -48,7 +50,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.CellId, for: indexPath) as! MovieTableViewCell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.CellId, for: indexPath) as! MovieTableViewCell
         presenter?.configure(cell: cell, indexPath: indexPath)
         return cell
     }

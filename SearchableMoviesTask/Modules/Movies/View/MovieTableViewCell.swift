@@ -27,7 +27,7 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
     }
     
     func configure(viewModel: MoviesViewModel) {
-        titleLabel.text = viewModel.title
+        titleLabel.text = "Title \(viewModel.title)"
         dateLabel.text = "Date: \(viewModel.year)"
     }
 
