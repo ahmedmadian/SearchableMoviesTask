@@ -10,8 +10,13 @@ import Foundation
 
 class MoviesWorker {
     private let moviesService = MoviesService()
+    private let moviesFilterService = MoviesFilterService()
     
     func getMovies() -> [Movie]? {
         return moviesService.getMovies()
+    }
+    
+    func getFilteredMovies(in movies: [Movie], by searchText: String) -> [Movie]? {
+        return moviesFilterService.getFilteredMovies(movies: movies, searchText: searchText)
     }
 }

@@ -13,7 +13,7 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     //MARK: Properties
     static let ViewControllerId = "MoviesViewController"
     var presenter: MoviesPresenterProtocol?
-    
+    var isSearching = false
 
     // MARK: Outlets.
     @IBOutlet weak var moviesTableView: UITableView!
@@ -23,6 +23,7 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.searchController = searchController
+        setupSearchBar()
         setupMoviesTableView()
         presenter?.viewDidLoad()
     }
@@ -31,7 +32,6 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     func reloadData() {
         moviesTableView.reloadData()
     }
-    
 }
 
 
@@ -45,8 +45,13 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(presenter!.numberOfRows)
-        return presenter!.numberOfRows
+        if isSearching {
+            print(presenter!.numberOfCurrentSearchedRows)
+            return presenter!.numberOfCurrentSearchedRows
+        } else {
+            print(presenter!.numberOfOriginalRows)
+            return presenter!.numberOfOriginalRows
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,5 +60,28 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
 }
+
+// MARK: Search Controller Extension
+extension MoviesViewController: UISearchControllerDelegate{
+    func setupSearchController() {
+        searchController.delegate = self
+    }
+}
+
+// MARK: Search Bar Delegate
+extension MoviesViewController: UISearchBarDelegate{
+    func setupSearchBar(){
+        searchController.searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        isSearching = true
+        presenter?.viewDidSearch(by: searchText)
+    }
+    
+    
+    
+}
+
 
 

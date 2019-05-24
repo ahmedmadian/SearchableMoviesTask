@@ -31,6 +31,7 @@
 		1E3B9AF02296D9D80036491E /* MoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */; };
 		1E3B9AF22296E0A00036491E /* MoviesCellViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */; };
 		1E3B9AF52296E0F10036491E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */; };
+		1E3B9AF72296EC830036491E /* MoviesFilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF62296EC830036491E /* MoviesFilterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWorker.swift; sourceTree = "<group>"; };
 		1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCellViewProtocol.swift; sourceTree = "<group>"; };
 		1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		1E3B9AF62296EC830036491E /* MoviesFilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFilterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				1E3B9AE52296D4900036491E /* MoviesService.swift */,
+				1E3B9AF62296EC830036491E /* MoviesFilterService.swift */,
 			);
 			path = LocalService;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				1E3B9AD02296BC6C0036491E /* MoviesViewController.swift in Sources */,
 				1E3B9ADE2296C35B0036491E /* MoviesInteractorOutputProtocol.swift in Sources */,
 				1E3B9AD42296C1730036491E /* MoviesPresenter.swift in Sources */,
+				1E3B9AF72296EC830036491E /* MoviesFilterService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,4 +14,6 @@ protocol MoviesInteractorInputProtocol {
     var presenter: MoviesInteractorOutputProtocol? {get set}
     
     func getMovies()
+    
+    func getFilteredMovies(in movies: [Movie], by searchText: String)
 }
