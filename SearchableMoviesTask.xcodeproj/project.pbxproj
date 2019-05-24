@@ -41,6 +41,7 @@
 		1E5C443422981CE500FCCD4F /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C443322981CE500FCCD4F /* MovieDetailPresenter.swift */; };
 		1E5C443A22982CF100FCCD4F /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C443922982CF100FCCD4F /* NavigationService.swift */; };
 		1E5C443C22982F2100FCCD4F /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C443B22982F2100FCCD4F /* MovieDetailViewController.swift */; };
+		1E5C4440229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C443F229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		1E5C443322981CE500FCCD4F /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		1E5C443922982CF100FCCD4F /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		1E5C443B22982F2100FCCD4F /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		1E5C443F229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 				1E5C442722981B9000FCCD4F /* MovieDetailPresenterProtocol.swift */,
 				1E5C442922981BAD00FCCD4F /* MovieDetailRouterProtocol.swift */,
 				1E5C442D22981C0900FCCD4F /* MovieDetailInteractorOutputProtocol.swift */,
+				1E5C443F229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				1E5C442622981B6F00FCCD4F /* MovieDetailViewProtocol.swift in Sources */,
 				1E3B9ADC2296C3300036491E /* MoviesInteractorInputProtocol.swift in Sources */,
 				1E3B9AE02296C76E0036491E /* MoviesInteractor.swift in Sources */,
+				1E5C4440229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift in Sources */,
 				1E3B9AE22296C7DD0036491E /* MoviesRouter.swift in Sources */,
 				1E3B9AF02296D9D80036491E /* MoviesWorker.swift in Sources */,
 				1E5C443422981CE500FCCD4F /* MovieDetailPresenter.swift in Sources */,
