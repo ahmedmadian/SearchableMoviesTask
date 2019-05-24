@@ -11,7 +11,7 @@ import UIKit
 class MoviesViewController: UIViewController, MoviesViewProtocol {
     
     //MARK: Properties
-    static let ViewControllerId = "MoviesViewController"
+    static let ViewControllerStoryboardId = "MoviesViewController"
     var presenter: MoviesPresenterProtocol?
 
     // MARK: Outlets.
@@ -63,6 +63,10 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.CellId, for: indexPath) as! MovieTableViewCell
         presenter?.configure(cell: cell, indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectRow(at: indexPath)
     }
 }
 

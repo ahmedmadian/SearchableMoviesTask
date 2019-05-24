@@ -30,5 +30,7 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
         dateLabel.text = "Date: \(viewModel.year)"
         ratingLabel.text = "R:\(viewModel.rating)"
     }
+    
+    
 
 }

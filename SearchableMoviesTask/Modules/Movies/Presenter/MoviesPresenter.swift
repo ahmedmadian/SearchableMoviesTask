@@ -9,16 +9,8 @@
 import Foundation
 
 class MoviesPresenter: MoviesPresenterProtocol {
-    func titleForSectionHeader(section: Int) -> String {
-        if isSearching{
-            return "\(sections[section])"
-        } else {
-            return ""
-        }
-    }
     
-  
-     //MARK: Properties.
+       //MARK: Properties.
     weak var view: MoviesViewProtocol?
     var originalMovies = [Movie]()
     var isSearching = false
@@ -72,10 +64,22 @@ class MoviesPresenter: MoviesPresenterProtocol {
         cell.configure(viewModel: viewModel)
     }
     
+    func titleForSectionHeader(section: Int) -> String {
+        if isSearching{
+            return "\(sections[section])"
+        } else {
+            return ""
+        }
+    }
+    
     func viewDidSearch(by searchText: String) {
         print("Presenter Start Searching ....")
         isSearching = true
         interactor.getFilteredMovies(in: originalMovies, by: searchText)
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        
     }
     
     

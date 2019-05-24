@@ -93,6 +93,21 @@
             </objects>
             <point key="canvasLocation" x="708" y="-564.46776611694156"/>
         </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="PP9-Ra-aA1">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="XBm-MG-kZX" customClass="MovieDetailViewController" customModule="SearchableMoviesTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9kX-BN-SsC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OAv-zB-O5b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWG-aV-fMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-566"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xuy-ZL-mIF">
             <objects>

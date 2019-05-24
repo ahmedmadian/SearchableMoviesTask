@@ -19,7 +19,7 @@ class MoviesRouter: MoviesRouterProtocol {
     //Create Movies Module
     static func create() -> UIViewController{
         
-        let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: MoviesViewController.ViewControllerId) as! MoviesViewController
+        let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: MoviesViewController.ViewControllerStoryboardId) as! MoviesViewController
         
         let interactor = MoviesInteractor()
         
