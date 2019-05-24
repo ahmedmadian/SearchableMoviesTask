@@ -17,8 +17,8 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
     
     //MARK: Outlets.
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +27,9 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
     
     func configure(viewModel: MoviesViewModel) {
         titleLabel.text = "\(viewModel.title)"
-        dateLabel.text = "Date: \(viewModel.year)"
-        ratingLabel.text = "R:\(viewModel.rating)"
+        //dateLabel.text = "Date: \(viewModel.year)"
+        //ratingLabel.text = "R:\(viewModel.rating)"
+        ratingImageView.image = UIImage(named: "\(viewModel.rating).png")
     }
     
     

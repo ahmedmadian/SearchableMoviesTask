@@ -79,6 +79,7 @@ class MoviesPresenter: MoviesPresenterProtocol {
     }
     
     func didSelectRow(at indexPath: IndexPath) {
+        self.router.openMovieDetailView()
         
     }
     

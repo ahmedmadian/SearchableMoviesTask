@@ -9,10 +9,6 @@
 import Foundation
 
 class MoviesInteractor: MoviesInteractorInputProtocol{
-    
-    
-    
-    
     var presenter: MoviesInteractorOutputProtocol?
     
     private let moviesWorker = MoviesWorker()

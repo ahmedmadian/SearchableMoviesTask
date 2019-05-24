@@ -9,6 +9,8 @@
 import Foundation
 class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorOutputProtocol {
     
+    
+    
     weak var view: MovieDetailViewProtocol?
     // presenter owns interactor and ask for updates
     private let interactor: MovieDetailInteractorInputProtocol
@@ -20,5 +22,11 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    //MARK: Methods
+    
+    func viewDidLoad() {
+        
     }
 }

@@ -16,6 +16,8 @@ class NavigationService{
         navController.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         navController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        navController.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+
         return navController
     }
     

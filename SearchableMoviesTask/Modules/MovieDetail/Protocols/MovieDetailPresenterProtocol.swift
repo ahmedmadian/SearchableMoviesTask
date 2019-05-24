@@ -11,5 +11,5 @@ protocol MovieDetailPresenterProtocol: class {
     
     // presenter should update view
     var view: MovieDetailViewProtocol? {get set}
-
+    func viewDidLoad()
 }
