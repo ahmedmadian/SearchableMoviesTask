@@ -11,4 +11,6 @@ import Foundation
 struct MoviesViewModel {
     var title: String
     var year: Int
+    var rating: Int
+    
 }

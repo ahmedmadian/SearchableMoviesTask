@@ -10,4 +10,5 @@ import Foundation
 
 protocol MoviesInteractorOutputProtocol {
     func moviesFetechedSuccessfully(movies: [Movie])
+    func filterdMoviesFetechedSuccessfully(with years:[Int], groupedMovies: [[Movie]])
 }

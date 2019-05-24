@@ -16,7 +16,7 @@ class MoviesWorker {
         return moviesService.getMovies()
     }
     
-    func getFilteredMovies(in movies: [Movie], by searchText: String) -> [Movie]? {
+    func getFilteredMovies(in movies: [Movie], by searchText: String) -> [(key: Int, value: [Movie])]? {
         return moviesFilterService.getFilteredMovies(movies: movies, searchText: searchText)
     }
 }

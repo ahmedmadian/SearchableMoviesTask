@@ -12,8 +12,12 @@ protocol MoviesPresenterProtocol: class {
     
     // presenter should update view
     var view: MoviesViewProtocol? {get set}
-    var numberOfOriginalRows: Int {get}
-    var numberOfCurrentSearchedRows: Int {get}
+    //var numberOfOriginalRows: Int {get}
+    //var numberOfSearchedSections:Int {get}
+    func numberOfSearchedSections() -> Int
+    //func numberOfCurrentSearchedRowsIn(section: Int) -> In
+    func numberOfRowsIn(section: Int) -> Int
+    func titleForSectionHeader(section: Int) -> String
     func viewDidLoad()
     func viewDidSearch(by searchText: String)
     func configure(cell: MoviesCellViewProtocol, indexPath: IndexPath)

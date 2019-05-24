@@ -8,31 +8,24 @@
 
 import Foundation
 
-class MoviesPresenter: MoviesPresenterProtocol, MoviesInteractorOutputProtocol {
-   
-    
-    
+class MoviesPresenter: MoviesPresenterProtocol {
+    func titleForSectionHeader(section: Int) -> String {
+        if isSearching{
+            return "\(sections[section])"
+        } else {
+            return ""
+        }
+    }
     
   
-    
- 
-    //MARK: Properties.
+     //MARK: Properties.
     weak var view: MoviesViewProtocol?
-    var movies = [Movie]()
-    var searchedMovies = [Movie]()
+    var originalMovies = [Movie]()
     var isSearching = false
-    
-    var numberOfOriginalRows: Int {
-        return movies.count
-    }
-    
-    var numberOfCurrentSearchedRows: Int{
-        return searchedMovies.count
-    }
-    
+    var sections = [Int]()
+    var groupedRows = [[Movie]]()
     // presenter owns interactor and ask for updates
     private let interactor: MoviesInteractorInputProtocol
-    
     // presenter own router
     private let router: MoviesRouterProtocol
     
@@ -48,36 +41,67 @@ class MoviesPresenter: MoviesPresenterProtocol, MoviesInteractorOutputProtocol {
         interactor.getMovies()
     }
     
-    func viewDidSearch(by searchText: String) {
-        print("Presenter Should Get the Searched data")
-        isSearching = true
-        interactor.getFilteredMovies(in: movies, by: searchText)
+    func numberOfSearchedSections() -> Int {
+        if isSearching{
+            print("Sections in Presenter = \(sections.count)")
+            return sections.count
+        } else {
+            print("sections in preseter = default = 1")
+            return 1
+        }
     }
     
-    
-    func moviesFetechedSuccessfully(movies: [Movie]) {
-        if isSearching{
-            print("Data comed")
-            self.searchedMovies = movies
+    func numberOfRowsIn(section: Int) -> Int {
+        if isSearching {
+            print("Rows Count in section \(sections[section]) = \(groupedRows[section].count)")
+            return groupedRows[section].count
         } else {
-            print("Data comed")
-            self.movies = movies
+            print(originalMovies.count)
+            return originalMovies.count
         }
-        
-        view?.reloadData()
     }
     
     func configure(cell: MoviesCellViewProtocol, indexPath: IndexPath) {
         var movie: Movie
-        if isSearching {
-            movie = self.searchedMovies[indexPath.row]
-        } else {
-            movie = self.movies[indexPath.row]
+        if isSearching{
+            movie = self.groupedRows[indexPath.section][indexPath.row]
+        } else{
+            movie = self.originalMovies[indexPath.row]
         }
-        let viewModel = MoviesViewModel(title: movie.title, year: movie.year)
+        let viewModel = MoviesViewModel(title: movie.title, year: movie.year,  rating: movie.rating)
         cell.configure(viewModel: viewModel)
-        
     }
+    
+    func viewDidSearch(by searchText: String) {
+        print("Presenter Start Searching ....")
+        isSearching = true
+        interactor.getFilteredMovies(in: originalMovies, by: searchText)
+    }
+    
+    
+}
+
+//MARK: Interactor Output to presenter
+extension MoviesPresenter : MoviesInteractorOutputProtocol {
+   
+    
+    func moviesFetechedSuccessfully(movies: [Movie]) {
+        print("Data comed")
+        self.originalMovies = movies
+        view?.reloadData()
+    }
+    
+    func filterdMoviesFetechedSuccessfully(with years: [Int], groupedMovies: [[Movie]]) {
+        print("presenter got the data sorted and modified")
+        
+        //isSearching = false
+        self.sections = years
+        self.groupedRows = groupedMovies
+        print("Years in presenter = \(years)")
+        view?.reloadData()
+    }
+    
+    
     
     
 }

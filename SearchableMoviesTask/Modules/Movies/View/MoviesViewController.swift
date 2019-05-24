@@ -13,7 +13,6 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     //MARK: Properties
     static let ViewControllerId = "MoviesViewController"
     var presenter: MoviesPresenterProtocol?
-    var isSearching = false
 
     // MARK: Outlets.
     @IBOutlet weak var moviesTableView: UITableView!
@@ -44,14 +43,20 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
         moviesTableView.dataSource = self
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter!.numberOfSearchedSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            print(presenter!.numberOfCurrentSearchedRows)
-            return presenter!.numberOfCurrentSearchedRows
-        } else {
-            print(presenter!.numberOfOriginalRows)
-            return presenter!.numberOfOriginalRows
-        }
+        return presenter!.numberOfRowsIn(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "\(presenter!.titleForSectionHeader(section: section))"
+        label.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        return label
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +80,6 @@ extension MoviesViewController: UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        isSearching = true
         presenter?.viewDidSearch(by: searchText)
     }
     
