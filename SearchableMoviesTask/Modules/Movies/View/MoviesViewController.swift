@@ -21,7 +21,8 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     //MARK: Controller Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.searchController = searchController
+        //searchController.dimsBackgroundDuringPresentation = false
+        //navigationItem.searchController = searchController
         setupSearchBar()
         setupMoviesTableView()
         presenter?.viewDidLoad()
@@ -70,17 +71,13 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-// MARK: Search Controller Extension
-extension MoviesViewController: UISearchControllerDelegate{
-    func setupSearchController() {
-        searchController.delegate = self
-    }
-}
 
 // MARK: Search Bar Delegate
 extension MoviesViewController: UISearchBarDelegate{
     func setupSearchBar(){
         searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
