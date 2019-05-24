@@ -10,18 +10,19 @@ import Foundation
 class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorOutputProtocol {
     
     
-    
+    //MARK: Properties.
+    var movie: Movie
     weak var view: MovieDetailViewProtocol?
-    // presenter owns interactor and ask for updates
     private let interactor: MovieDetailInteractorInputProtocol
-    // presenter own router
     private let router: MovieDetailRouterProtocol
     
     
-    init(view: MovieDetailViewProtocol, interactor: MovieDetailInteractorInputProtocol, router: MovieDetailRouterProtocol){
+    init(view: MovieDetailViewProtocol, interactor: MovieDetailInteractorInputProtocol, router: MovieDetailRouterProtocol, movie: Movie){
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.movie = movie
+        print("Movie Detail Presenter: \(movie.title)")
     }
     
     //MARK: Methods

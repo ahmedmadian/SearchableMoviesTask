@@ -79,8 +79,14 @@ class MoviesPresenter: MoviesPresenterProtocol {
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        self.router.openMovieDetailView()
-        
+        var movie: Movie
+        if isSearching{
+            movie = self.groupedRows[indexPath.section][indexPath.row]
+        } else{
+            movie = self.originalMovies[indexPath.row]
+        }
+
+        self.router.openMovieDetailView(movie: movie)
     }
     
     

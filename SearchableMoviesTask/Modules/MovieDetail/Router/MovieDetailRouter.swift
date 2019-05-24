@@ -12,7 +12,7 @@ class MovieDetailRouter: MovieDetailRouterProtocol{
     var viewController: UIViewController?
     
     //Create Movies Module
-    static func create() -> UIViewController{
+    static func create(movie: Movie) -> UIViewController{
         
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: MovieDetailViewController.ViewControllerStoryboardId) as! MovieDetailViewController
         
@@ -20,7 +20,7 @@ class MovieDetailRouter: MovieDetailRouterProtocol{
         
         let router = MovieDetailRouter()
         
-        let presenter = MovieDetailPresenter(view: view, interactor: interactor, router: router)
+        let presenter = MovieDetailPresenter(view: view, interactor: interactor, router: router, movie: movie)
         
         view.presenter = presenter
         

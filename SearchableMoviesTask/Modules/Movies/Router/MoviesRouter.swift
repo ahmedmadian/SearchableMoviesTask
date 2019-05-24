@@ -37,8 +37,8 @@ class MoviesRouter: MoviesRouterProtocol {
         
     }
     
-    func openMovieDetailView(){
-        let movieDetailView = MovieDetailRouter.create()
+    func openMovieDetailView(movie: Movie){
+        let movieDetailView = MovieDetailRouter.create(movie: movie)
         viewController?.navigationController?.pushViewController(movieDetailView, animated: true)
         
     }
