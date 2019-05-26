@@ -32,6 +32,5 @@ struct FlickrParameterValues {
     static let APIKey = "70c8777b34f263822c768becf979fae8"
     static let ResponseFormat = "json"
     static let DisableJSONCallback = true
-    static let GalleryID = "5704-72157622566655097"
 }
 

@@ -10,6 +10,8 @@ import Foundation
 class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorOutputProtocol {
     
     
+    
+    
     //MARK: Properties.
     var movie: Movie
     weak var view: MovieDetailViewProtocol?
@@ -28,6 +30,10 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
     //MARK: Methods
     
     func viewDidLoad() {
-        
+        interactor.executeToGetImagesURL(with: movie)
+    }
+    
+    func moviesFetechedSuccessfully(with imageURLS: [String]) {
+        print(imageURLS)
     }
 }

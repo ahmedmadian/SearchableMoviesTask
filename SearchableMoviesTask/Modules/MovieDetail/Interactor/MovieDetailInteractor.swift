@@ -8,8 +8,19 @@
 
 import Foundation
 class MovieDetailInteractor: MovieDetailInteractorInputProtocol {
+   
+    private let movieImagesWorker = MovieImagesWorker()
+    var imagesURL = [String]() {
+        didSet{
+            presenter?.moviesFetechedSuccessfully(with: self.imagesURL)
+        }
+    }
     
     var presenter: MovieDetailInteractorOutputProtocol?
     
-    
+    func executeToGetImagesURL(with movie: Movie) {
+        movieImagesWorker.execute(with: movie) { (data) in
+            self.imagesURL = (data ?? []).map{ $0.imageUrl }
+        }
+    }
 }

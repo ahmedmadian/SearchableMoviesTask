@@ -10,4 +10,5 @@ import Foundation
 protocol MovieDetailInteractorInputProtocol {
     //Interactor notifies any one intersted for changes
     var presenter: MovieDetailInteractorOutputProtocol? {get set}
+    func executeToGetImagesURL(with movie:Movie)
 }
