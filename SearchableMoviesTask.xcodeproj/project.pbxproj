@@ -184,8 +184,8 @@
 		1E3B9A8E2296B7420036491E /* SearchableMoviesTask */ = {
 			isa = PBXGroup;
 			children = (
-				1E5C4489229A0D8200FCCD4F /* Utilities */,
 				1E3B9AE72296D4ED0036491E /* movies.json */,
+				1E5C4489229A0D8200FCCD4F /* Utilities */,
 				1E3B9AED2296D9A80036491E /* Workers */,
 				1E3B9AC12296B7E00036491E /* Modules */,
 				1E3B9AC02296B7D20036491E /* Model */,
