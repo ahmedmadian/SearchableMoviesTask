@@ -8,5 +8,5 @@
 
 import Foundation
 protocol MoviesCellViewProtocol {
-    func configure(viewModel: MoviesViewModel)
+    func configure(viewModel: MovieViewModel)
 }

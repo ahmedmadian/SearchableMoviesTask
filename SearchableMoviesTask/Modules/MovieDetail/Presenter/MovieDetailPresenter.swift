@@ -11,9 +11,14 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
     
     
     
-    
     //MARK: Properties.
     var movie: Movie
+
+    var imageURLS = [String]()
+    var numberOfImages: Int {
+        return imageURLS.count
+    }
+    
     weak var view: MovieDetailViewProtocol?
     private let interactor: MovieDetailInteractorInputProtocol
     private let router: MovieDetailRouterProtocol
@@ -24,16 +29,24 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
         self.interactor = interactor
         self.router = router
         self.movie = movie
-        print("Movie Detail Presenter: \(movie.title)")
     }
     
     //MARK: Methods
     
     func viewDidLoad() {
         interactor.executeToGetImagesURL(with: movie)
+        let movieViewModel = MovieViewModel(title: movie.title, rating: movie.rating, year: "\(movie.year)", genres: movie.genres.joined(separator: ", "), cast: movie.cast.joined(separator: ", "))
+        view?.config(with: movieViewModel)
     }
     
     func moviesFetechedSuccessfully(with imageURLS: [String]) {
         print(imageURLS)
+        self.imageURLS = imageURLS
     }
+    
+    func configure(cell: MovieImageCollectionViewCell, indexPath: IndexPath) {
+        let viewModel = MovieImagesViewModel(imageURl: imageURLS[indexPath.row])
+        cell.configure(viewModel: viewModel)
+    }
+    
 }

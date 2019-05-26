@@ -11,5 +11,8 @@ protocol MovieDetailPresenterProtocol: class {
     
     // presenter should update view
     var view: MovieDetailViewProtocol? {get set}
+    
+    var numberOfImages: Int {get}
     func viewDidLoad()
+    func configure(cell: MovieImageCollectionViewCell, indexPath: IndexPath)
 }

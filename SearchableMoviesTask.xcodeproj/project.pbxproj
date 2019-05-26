@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E004B16229A8A7A003D30F2 /* MovieImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E004B15229A8A7A003D30F2 /* MovieImageCollectionViewCell.swift */; };
+		1E004B18229A8AAE003D30F2 /* MovieCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E004B17229A8AAE003D30F2 /* MovieCollectionViewCellProtocol.swift */; };
+		1E004B1A229A8B18003D30F2 /* MovieImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E004B19229A8B18003D30F2 /* MovieImagesViewModel.swift */; };
 		1E3B9A902296B7420036491E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9A8F2296B7420036491E /* AppDelegate.swift */; };
 		1E3B9A952296B7420036491E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B9A932296B7420036491E /* Main.storyboard */; };
 		1E3B9A972296B7430036491E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B9A962296B7430036491E /* Assets.xcassets */; };
@@ -30,7 +33,7 @@
 		1E3B9AEB2296D5C10036491E /* MoviesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AEA2296D5C10036491E /* MoviesDTO.swift */; };
 		1E3B9AF02296D9D80036491E /* MoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */; };
 		1E3B9AF22296E0A00036491E /* MoviesCellViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */; };
-		1E3B9AF52296E0F10036491E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */; };
+		1E3B9AF52296E0F10036491E /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF42296E0F10036491E /* MovieViewModel.swift */; };
 		1E3B9AF72296EC830036491E /* MoviesFilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B9AF62296EC830036491E /* MoviesFilterService.swift */; };
 		1E5C442622981B6F00FCCD4F /* MovieDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C442522981B6F00FCCD4F /* MovieDetailViewProtocol.swift */; };
 		1E5C442822981B9000FCCD4F /* MovieDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5C442722981B9000FCCD4F /* MovieDetailPresenterProtocol.swift */; };
@@ -74,6 +77,9 @@
 /* Begin PBXFileReference section */
 		01D967C5C1EBFA25FED34177 /* Pods_SearchableMoviesTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchableMoviesTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08163E3788789308D0C9035C /* Pods-SearchableMoviesTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchableMoviesTask.debug.xcconfig"; path = "Target Support Files/Pods-SearchableMoviesTask/Pods-SearchableMoviesTask.debug.xcconfig"; sourceTree = "<group>"; };
+		1E004B15229A8A7A003D30F2 /* MovieImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E004B17229A8AAE003D30F2 /* MovieCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		1E004B19229A8B18003D30F2 /* MovieImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImagesViewModel.swift; sourceTree = "<group>"; };
 		1E3B9A8C2296B7420036491E /* SearchableMoviesTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchableMoviesTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3B9A8F2296B7420036491E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3B9A942296B7420036491E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		1E3B9AEA2296D5C10036491E /* MoviesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDTO.swift; sourceTree = "<group>"; };
 		1E3B9AEF2296D9D80036491E /* MoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWorker.swift; sourceTree = "<group>"; };
 		1E3B9AF12296E0A00036491E /* MoviesCellViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCellViewProtocol.swift; sourceTree = "<group>"; };
-		1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		1E3B9AF42296E0F10036491E /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		1E3B9AF62296EC830036491E /* MoviesFilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFilterService.swift; sourceTree = "<group>"; };
 		1E5C442522981B6F00FCCD4F /* MovieDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewProtocol.swift; sourceTree = "<group>"; };
 		1E5C442722981B9000FCCD4F /* MovieDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -370,7 +376,8 @@
 		1E3B9AF32296E0D90036491E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1E3B9AF42296E0F10036491E /* MoviesViewModel.swift */,
+				1E3B9AF42296E0F10036491E /* MovieViewModel.swift */,
+				1E004B19229A8B18003D30F2 /* MovieImagesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 				1E5C442922981BAD00FCCD4F /* MovieDetailRouterProtocol.swift */,
 				1E5C442D22981C0900FCCD4F /* MovieDetailInteractorOutputProtocol.swift */,
 				1E5C443F229840C400FCCD4F /* MovieDetailInteractorInputProtocol.swift */,
+				1E004B17229A8AAE003D30F2 /* MovieCollectionViewCellProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -427,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				1E5C443B22982F2100FCCD4F /* MovieDetailViewController.swift */,
+				1E004B15229A8A7A003D30F2 /* MovieImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,10 +705,12 @@
 				1E3B9AC62296B8B50036491E /* Genre.swift in Sources */,
 				1E3B9AC42296B8930036491E /* Movie.swift in Sources */,
 				1E5C448022995F8F00FCCD4F /* Flicker.swift in Sources */,
+				1E004B1A229A8B18003D30F2 /* MovieImagesViewModel.swift in Sources */,
 				1E3B9AF22296E0A00036491E /* MoviesCellViewProtocol.swift in Sources */,
 				1E3B9AE62296D4900036491E /* MoviesService.swift in Sources */,
 				1E3B9A902296B7420036491E /* AppDelegate.swift in Sources */,
 				1E3B9AD82296C2700036491E /* MoviesPresenterProtocol.swift in Sources */,
+				1E004B16229A8A7A003D30F2 /* MovieImageCollectionViewCell.swift in Sources */,
 				1E5C4482229A061100FCCD4F /* FlickerResponseDTO.swift in Sources */,
 				1E5C448B229A0D9D00FCCD4F /* Dicitonary+Merge.swift in Sources */,
 				1E5C443222981CB900FCCD4F /* MovieDetailInteractor.swift in Sources */,
@@ -715,7 +726,7 @@
 				1E5C443422981CE500FCCD4F /* MovieDetailPresenter.swift in Sources */,
 				1E3B9ADA2296C2A40036491E /* MoviesRouterProtocol.swift in Sources */,
 				1E5C442A22981BAD00FCCD4F /* MovieDetailRouterProtocol.swift in Sources */,
-				1E3B9AF52296E0F10036491E /* MoviesViewModel.swift in Sources */,
+				1E3B9AF52296E0F10036491E /* MovieViewModel.swift in Sources */,
 				1E5C442822981B9000FCCD4F /* MovieDetailPresenterProtocol.swift in Sources */,
 				1E3B9AEB2296D5C10036491E /* MoviesDTO.swift in Sources */,
 				1E3B9AD02296BC6C0036491E /* MoviesViewController.swift in Sources */,
@@ -727,6 +738,7 @@
 				1E5C443A22982CF100FCCD4F /* NavigationService.swift in Sources */,
 				1E5C443C22982F2100FCCD4F /* MovieDetailViewController.swift in Sources */,
 				1E5C4484229A062300FCCD4F /* PhotosDTO.swift in Sources */,
+				1E004B18229A8AAE003D30F2 /* MovieCollectionViewCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,7 +60,7 @@ class MoviesPresenter: MoviesPresenterProtocol {
         } else{
             movie = self.originalMovies[indexPath.row]
         }
-        let viewModel = MoviesViewModel(title: movie.title, year: movie.year,  rating: movie.rating)
+        let viewModel = MovieViewModel(title: movie.title, rating: movie.rating)
         cell.configure(viewModel: viewModel)
     }
     

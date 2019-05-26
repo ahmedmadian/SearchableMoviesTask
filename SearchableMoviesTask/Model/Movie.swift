@@ -13,6 +13,6 @@ struct Movie: Codable {
     let title: String
     let year: Int
     let cast: [String]
-    let genres: [Genre]
+    let genres: [String]
     let rating: Int
 }

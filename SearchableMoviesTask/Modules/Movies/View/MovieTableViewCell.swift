@@ -25,10 +25,8 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
         // Initialization code
     }
     
-    func configure(viewModel: MoviesViewModel) {
+    func configure(viewModel: MovieViewModel) {
         titleLabel.text = "\(viewModel.title)"
-        //dateLabel.text = "Date: \(viewModel.year)"
-        //ratingLabel.text = "R:\(viewModel.rating)"
         ratingImageView.image = UIImage(named: "\(viewModel.rating).png")
     }
     
