@@ -1,0 +1,6 @@
+framework module Pods_SearchableMoviesTaskTests {
+  umbrella header "Pods-SearchableMoviesTaskTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

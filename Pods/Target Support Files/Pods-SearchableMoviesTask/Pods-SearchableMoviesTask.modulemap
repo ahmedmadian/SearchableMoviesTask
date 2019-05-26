@@ -1,0 +1,6 @@
+framework module Pods_SearchableMoviesTask {
+  umbrella header "Pods-SearchableMoviesTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
