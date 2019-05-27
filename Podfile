@@ -9,6 +9,7 @@ target 'SearchableMoviesTask' do
 
 pod 'Alamofire'
 pod 'Kingfisher'
+pod 'Cosmos'
 
   target 'SearchableMoviesTaskTests' do
     inherit! :search_paths

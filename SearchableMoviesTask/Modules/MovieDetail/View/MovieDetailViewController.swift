@@ -14,6 +14,7 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
     
     
     
+    
         
     //MARK: Properties
     static let ViewControllerStoryboardId = "MovieDetailViewController"
@@ -26,7 +27,6 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genresLable: UILabel!
     @IBOutlet weak var castLabel: UILabel!
-
     //@IBOutlet var testingImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
     
     func setupNavigationItem(){
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.title = "Detail"
+        //navigationItem.title = "Detail"
     }
     
     func config(with movieViewModel: MovieViewModel) {
@@ -47,8 +47,13 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
         yearLabel.text = movieViewModel.year
         genresLable.text = movieViewModel.genres
         castLabel.text = movieViewModel.cast
+        // navigationItem.title = movieViewModel.title
     }
-
+    
+    func reloadData() {
+        imagesCollectionView.reloadData()
+    }
+    
 }
 
 extension MovieDetailViewController : UICollectionViewDataSource, UICollectionViewDelegate{

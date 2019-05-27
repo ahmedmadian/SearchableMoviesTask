@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
     
@@ -17,17 +18,18 @@ class MovieTableViewCell: UITableViewCell, MoviesCellViewProtocol {
     
     //MARK: Outlets.
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var ratingImageView: UIImageView!
     
+    @IBOutlet weak var ratingStarsView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        ratingStarsView.settings.updateOnTouch = false
     }
     
     func configure(viewModel: MovieViewModel) {
         titleLabel.text = "\(viewModel.title)"
-        ratingImageView.image = UIImage(named: "\(viewModel.rating).png")
+        ratingStarsView.rating = Double(viewModel.rating)
+        ratingStarsView.text = "\(viewModel.rating)"
     }
     
     

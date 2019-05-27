@@ -12,4 +12,5 @@ protocol MovieDetailViewProtocol: class {
     //View Owns and send user action to presenter
     var presenter: MovieDetailPresenterProtocol? {get set}
     func config(with movieViewModel: MovieViewModel)
+    func reloadData()
 }

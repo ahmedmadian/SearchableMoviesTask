@@ -55,8 +55,10 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.text = "\(presenter!.titleForSectionHeader(section: section))"
-        label.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        label.backgroundColor = #colorLiteral(red: 0.9126773477, green: 0.9126773477, blue: 0.9126773477, alpha: 1)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont(name: "Avenir", size: 30.0)
+        label.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return label
     }
     

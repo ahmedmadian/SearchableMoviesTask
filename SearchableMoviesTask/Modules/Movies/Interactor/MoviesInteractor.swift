@@ -14,13 +14,11 @@ class MoviesInteractor: MoviesInteractorInputProtocol{
     private let moviesWorker = MoviesWorker()
     
     func getMovies() {
-        print("Interactor should get the data")
         guard let movies = moviesWorker.getMovies() else{ return}
         presenter?.moviesFetechedSuccessfully(movies: movies)
     }
     
     func getFilteredMovies(in movies: [Movie], by searchText: String) {
-        print("Interactor should get the Filtered data")
         guard let moviesKeyValuePairs = moviesWorker.getFilteredMovies(in: movies, by: searchText) else{ return}
         var years = [Int]()
         var movies = [[Movie]]()

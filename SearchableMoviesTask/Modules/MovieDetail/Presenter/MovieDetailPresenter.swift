@@ -14,7 +14,11 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
     //MARK: Properties.
     var movie: Movie
 
-    var imageURLS = [String]()
+    var imageURLS = [String](){
+        didSet{
+            
+        }
+    }
     var numberOfImages: Int {
         return imageURLS.count
     }
@@ -42,6 +46,7 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
     func moviesFetechedSuccessfully(with imageURLS: [String]) {
         print(imageURLS)
         self.imageURLS = imageURLS
+        view?.reloadData()
     }
     
     func configure(cell: MovieImageCollectionViewCell, indexPath: IndexPath) {

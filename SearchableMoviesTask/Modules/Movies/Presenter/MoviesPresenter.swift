@@ -29,26 +29,23 @@ class MoviesPresenter: MoviesPresenterProtocol {
     
     //MARK: Methods.
     func viewDidLoad() {
-        print("Presenter Should get the data")
         interactor.getMovies()
     }
     
     func numberOfSearchedSections() -> Int {
         if isSearching{
-            print("Sections in Presenter = \(sections.count)")
             return sections.count
         } else {
-            print("sections in preseter = default = 1")
+            
+            //TODO
             return 1
         }
     }
     
     func numberOfRowsIn(section: Int) -> Int {
         if isSearching {
-            print("Rows Count in section \(sections[section]) = \(groupedRows[section].count)")
             return groupedRows[section].count
         } else {
-            print(originalMovies.count)
             return originalMovies.count
         }
     }
@@ -73,7 +70,6 @@ class MoviesPresenter: MoviesPresenterProtocol {
     }
     
     func viewDidSearch(by searchText: String) {
-        print("Presenter Start Searching ....")
         isSearching = true
         interactor.getFilteredMovies(in: originalMovies, by: searchText)
     }
@@ -97,18 +93,14 @@ extension MoviesPresenter : MoviesInteractorOutputProtocol {
    
     
     func moviesFetechedSuccessfully(movies: [Movie]) {
-        print("Data comed")
         self.originalMovies = movies
         view?.reloadData()
     }
     
     func filterdMoviesFetechedSuccessfully(with years: [Int], groupedMovies: [[Movie]]) {
-        print("presenter got the data sorted and modified")
-        
         //isSearching = false
         self.sections = years
         self.groupedRows = groupedMovies
-        print("Years in presenter = \(years)")
         view?.reloadData()
     }
     
