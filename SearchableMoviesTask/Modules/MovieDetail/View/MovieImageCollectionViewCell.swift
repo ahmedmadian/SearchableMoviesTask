@@ -25,7 +25,7 @@ class MovieImageCollectionViewCell: UICollectionViewCell, MovieCollectionViewCel
       let testUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg"
         
         movieImage.kf.indicatorType = .activity
-        movieImage.kf.setImage(with: URL.init(string: testUrl /*viewModel.imageURl*/), placeholder: UIImage(named: "placeholder"), options: [
+        movieImage.kf.setImage(with: URL.init(string: /*testUrl*/viewModel.imageURl), placeholder: UIImage(named: "placeholder"), options: [
             .scaleFactor(UIScreen.main.scale),
             .transition(.fade(1)),
             .cacheOriginalImage
