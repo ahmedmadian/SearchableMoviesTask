@@ -1,6 +1,6 @@
 # SearchableMoviesTask
 
-This is demo for ios developer vacancy in SWVL
+This demo for iOS developer vacancy in SWVL
 
 ## About This Task
 
