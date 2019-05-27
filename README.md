@@ -16,18 +16,18 @@ VIPER Architecture
 
 ### Dependency Graph
 
-The dependence graph is unidirectional, which means:
-**View** knows about **Presenter**
-**Presenter** knows about **Router** ,**Interactor** and **View**
-**Interactor** grab data from **Workers _ Utilities**. 
+The dependence graph is unidirectional, which means:  <br />
+**View** knows about **Presenter**.  <br />
+**Presenter** knows about **Router** ,**Interactor** and **View**.  <br />
+**Interactor** grab data from **Workers _ Utilities**.  <br />
 **Workers** communicates with repositories.
 
-Every inner layer doesn't know anything about the outer layer.
+Every inner layer doesn't know anything about the outer layer. <br />
 **delegates (protocols)** used to establisb a pipline from inner layers to outer layers, to inform outer layers about the changes in inner layers.
 
 ### Third Party Libraries
 
-**Alamofire** for network requests.
+**Alamofire** for network requests. <br />
 **kingFisher** for downloading images.
 
 ### Services
