@@ -7,15 +7,12 @@
 //
 
 import UIKit
+import Cosmos
 import Kingfisher
 
 
 class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
-    
-    
-    
-    
-        
+ 
     //MARK: Properties
     static let ViewControllerStoryboardId = "MovieDetailViewController"
     var presenter: MovieDetailPresenterProtocol?
@@ -27,7 +24,7 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genresLable: UILabel!
     @IBOutlet weak var castLabel: UILabel!
-    //@IBOutlet var testingImageView: UIImageView!
+    @IBOutlet var ratingView: CosmosView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +44,8 @@ class MovieDetailViewController: UIViewController, MovieDetailViewProtocol{
         yearLabel.text = movieViewModel.year
         genresLable.text = movieViewModel.genres
         castLabel.text = movieViewModel.cast
-        // navigationItem.title = movieViewModel.title
+        //ratingView.text = "\(movieViewModel.rating)"
+        ratingView.rating = Double(movieViewModel.rating)
     }
     
     func reloadData() {
