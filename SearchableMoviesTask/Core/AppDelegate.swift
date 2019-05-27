@@ -15,17 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        /*
-        let navController = UINavigationController(rootViewController: MoviesRouter.create())
-        navController.navigationBar.prefersLargeTitles = true
-        navController.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-        navController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-        */
         
-        window?.rootViewController = NavigationService.setupNavigationController()
-        
-       
+        window?.rootViewController = Navigation.setupNavigationController()
         return true
     }
 

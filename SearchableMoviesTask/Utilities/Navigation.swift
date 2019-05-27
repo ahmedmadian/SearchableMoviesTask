@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class NavigationService{
+class Navigation{
    // static var navController: UINavigationController!
     
     static func setupNavigationController() -> UINavigationController{

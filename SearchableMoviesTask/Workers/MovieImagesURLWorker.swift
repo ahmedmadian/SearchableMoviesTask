@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MovieImagesWorker {
+class MovieImagesURLWorker {
      private let apiClient = FlickerApiClient.shared
     
     func execute(with movie: Movie, completion: @escaping (([PhotoDTO]?)) -> ()) {

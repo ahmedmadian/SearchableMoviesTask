@@ -103,7 +103,6 @@ extension MoviesPresenter : MoviesInteractorOutputProtocol {
     }
     
     func filterdMoviesFetechedSuccessfully(with years: [Int], groupedMovies: [[Movie]]) {
-        //isSearching = false
         self.sections = years
         self.groupedRows = groupedMovies
         view?.reloadData()

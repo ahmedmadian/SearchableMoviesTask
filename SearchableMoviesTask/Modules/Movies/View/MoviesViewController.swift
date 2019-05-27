@@ -53,11 +53,11 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let label = UILabel()
-        label.text = "    \(presenter!.titleForSectionHeader(section: section))"
-        label.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.text = "\(presenter!.titleForSectionHeader(section: section))"
+        label.textAlignment = .center
+        label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         label.font = UIFont(name: "Avenir", size: 30.0)
         return label
     }
@@ -96,9 +96,6 @@ extension MoviesViewController: UISearchBarDelegate{
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        //searchBar.showsCancelButton = false
-        //searchBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        //searchBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         presenter?.searchCanceled()
     }
     

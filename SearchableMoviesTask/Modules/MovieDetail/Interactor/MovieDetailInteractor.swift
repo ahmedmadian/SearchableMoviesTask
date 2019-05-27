@@ -9,7 +9,7 @@
 import Foundation
 class MovieDetailInteractor: MovieDetailInteractorInputProtocol {
    
-    private let movieImagesWorker = MovieImagesWorker()
+    private let movieImagesWorker = MovieImagesURLWorker()
     var imagesURL = [String]() {
         didSet{
             presenter?.moviesFetechedSuccessfully(with: self.imagesURL)

@@ -17,27 +17,27 @@ class MovieImageCollectionViewCell: UICollectionViewCell, MovieCollectionViewCel
     
     //MARK: Outlets.
     @IBOutlet weak var movieImage: UIImageView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+   // @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     
     func configure(viewModel: MovieImagesViewModel) {
 
-//        let testurl = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg"
+      let testUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg"
         
-        movieImage.kf.setImage(with: URL.init(string: viewModel.imageURl), placeholder: UIImage(named: "placeholder"), options: [
+        movieImage.kf.indicatorType = .activity
+        movieImage.kf.setImage(with: URL.init(string: testUrl /*viewModel.imageURl*/), placeholder: UIImage(named: "placeholder"), options: [
             .scaleFactor(UIScreen.main.scale),
             .transition(.fade(1)),
             .cacheOriginalImage
             ])
         {
             result in
+            //self.spinner.stopAnimating()
             switch result {
             case .success(let value):
                 print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                self.spinner.stopAnimating()
             case .failure(let error):
                 print("Job failed: \(error.localizedDescription) .... ")
-                self.spinner.stopAnimating()
             }
         }
     }
