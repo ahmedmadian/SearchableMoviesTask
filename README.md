@@ -25,5 +25,11 @@ The dependence graph is unidirectional, which means:
 Every inner layer doesn't know anything about the outer layer.
 **delegates (protocols)** used to establisb a pipline from inner layers to outer layers, to inform outer layers about the changes in inner layers.
 
+### Third Party Libraries
 
+**Alamofire** for network requests.
+**kingFisher** for downloading images.
 
+### Services
+
+Flicker API
