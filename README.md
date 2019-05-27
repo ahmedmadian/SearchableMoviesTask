@@ -23,7 +23,7 @@ The dependence graph is unidirectional, which means:  <br />
 **Workers** communicates with repositories.
 
 Every inner layer doesn't know anything about the outer layer. <br />
-**delegates (protocols)** used to establisb a pipline from inner layers to outer layers, to inform outer layers about the changes in inner layers.
+**delegates (protocols)** used to establish a pipline from inner layers to outer layers, to inform outer layers about the changes in inner layers.
 
 ### Third Party Libraries
 
