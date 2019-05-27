@@ -17,6 +17,7 @@ protocol MoviesPresenterProtocol: class {
     func titleForSectionHeader(section: Int) -> String
     func viewDidLoad()
     func viewDidSearch(by searchText: String)
+    func searchCanceled()
     func didSelectRow(at indexPath: IndexPath)
     func configure(cell: MoviesCellViewProtocol, indexPath: IndexPath)
     

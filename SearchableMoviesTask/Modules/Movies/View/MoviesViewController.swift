@@ -21,11 +21,10 @@ class MoviesViewController: UIViewController, MoviesViewProtocol {
     //MARK: Controller Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        //searchController.dimsBackgroundDuringPresentation = false
-        //navigationItem.searchController = searchController
         setupSearchController()
         setupMoviesTableView()
         presenter?.viewDidLoad()
+       
     }
     
     //MARK: Methods
@@ -42,6 +41,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     func setupMoviesTableView(){
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
+         moviesTableView.sectionHeaderHeight = 50
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,12 +53,12 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let label = UILabel()
-        label.text = "\(presenter!.titleForSectionHeader(section: section))"
-        label.backgroundColor = #colorLiteral(red: 0.9126773477, green: 0.9126773477, blue: 0.9126773477, alpha: 1)
+        label.text = "    \(presenter!.titleForSectionHeader(section: section))"
+        label.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.font = UIFont(name: "Avenir", size: 30.0)
-        label.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return label
     }
     
@@ -78,13 +78,28 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource{
 extension MoviesViewController: UISearchBarDelegate{
     func setupSearchController(){
         searchController.searchBar.delegate = self
+        searchController.searchBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter?.viewDidSearch(by: searchText)
+        if searchText.isEmpty {
+            presenter?.searchCanceled()
+        } else {
+            presenter?.viewDidSearch(by: searchText)
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //searchBar.showsCancelButton = false
+        //searchBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //searchBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        presenter?.searchCanceled()
     }
     
 }

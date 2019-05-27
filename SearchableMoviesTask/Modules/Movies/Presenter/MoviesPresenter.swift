@@ -10,15 +10,15 @@ import Foundation
 
 class MoviesPresenter: MoviesPresenterProtocol {
     
+    
+    
        //MARK: Properties.
     weak var view: MoviesViewProtocol?
     var originalMovies = [Movie]()
     var isSearching = false
     var sections = [Int]()
     var groupedRows = [[Movie]]()
-    // presenter owns interactor and ask for updates
     private let interactor: MoviesInteractorInputProtocol
-    // presenter own router
     private let router: MoviesRouterProtocol
     
     init(view: MoviesViewProtocol, interactor: MoviesInteractorInputProtocol, router: MoviesRouterProtocol) {
@@ -72,6 +72,11 @@ class MoviesPresenter: MoviesPresenterProtocol {
     func viewDidSearch(by searchText: String) {
         isSearching = true
         interactor.getFilteredMovies(in: originalMovies, by: searchText)
+    }
+    
+    func searchCanceled() {
+        isSearching = false
+        interactor.getMovies()
     }
     
     func didSelectRow(at indexPath: IndexPath) {
