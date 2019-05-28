@@ -29,6 +29,7 @@ Every inner layer doesn't know anything about the outer layer. <br />
 
 **Alamofire** for network requests. <br />
 **kingFisher** for downloading images.
+**Cosmos** for stars rating bar.
 
 ### Services
 
