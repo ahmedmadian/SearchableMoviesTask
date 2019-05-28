@@ -16,7 +16,7 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
 
     var imageURLS = [String](){
         didSet{
-            
+            view?.reloadData()
         }
     }
     var numberOfImages: Int {
@@ -46,7 +46,6 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol, MovieDetailInteractorO
     func moviesFetechedSuccessfully(with imageURLS: [String]) {
         print(imageURLS)
         self.imageURLS = imageURLS
-        view?.reloadData()
     }
     
     func configure(cell: MovieImageCollectionViewCell, indexPath: IndexPath) {
